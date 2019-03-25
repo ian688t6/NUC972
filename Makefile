@@ -28,8 +28,6 @@ build: $(foreach dir,$(dirs),make_submod_all_$(dir))
 	
 clean: $(foreach dir,$(dirs),make_submod_clean_$(dir))
 
-
-
 define make_submod
 make_submod_$(1)_$(2) : $(2)
 	@if [ $(2) = ${mod} ]; then $(MAKE) -C $(2) $(1);fi
