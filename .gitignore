@@ -1,0 +1,6 @@
+tags
+*.o
+*.so
+linux-3.10.y/
+u-boot-201611/
+
