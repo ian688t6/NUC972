@@ -4,21 +4,20 @@ KERNEL_SOURCE := linux-3.10.y
 .PHONY: all clean install
 
 all:
-	@echo "build $(CURDIR)"
-	@if [ -d $(KERNEL_SOURCE) ]; then \
+	@if [ -d $(BUILDDIR)/$(KERNEL_SOURCE) ]; then \
 		echo "make $(KERNEL_SOURCE)"; \
-		cp -rf patch/* $(KERNEL_SOURCE)/; \
-		make -C $(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) nuc972_defconfig; \
-		cd $(KERNEL_SOURCE); make -j8 ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) uImage; cd -; \
+		cp -rf patch/* $(BUILDDIR)/$(KERNEL_SOURCE)/; \
+		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) nuc972_defconfig; \
+		cd $(BUILDDIR)/$(KERNEL_SOURCE); make -j8 ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) uImage; cd -; \
 	fi
 
 clean:
 	@echo "clean $(CURDIR)"
-	@if [ -d $(KERNEL_SOURCE) ]; then \
-		make -C $(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) clean; \
+	@if [ -d $(BUILDDIR)/$(KERNEL_SOURCE) ]; then \
+		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) clean; \
 	fi
 
 install:
 	@echo "install $(CURDIR)"
-	@cp $(KERNEL_SOURCE)/arch/arm/boot/uImage $(OUTDIR)/bin
+	@cp $(BUILDDIR)/$(KERNEL_SOURCE)/arch/arm/boot/uImage $(OUTDIR)/bin
 
