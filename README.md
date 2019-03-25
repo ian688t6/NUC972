@@ -1,3 +1,24 @@
+# How to compile the source first time?
+* step1
+``` bash
+# make prepare
+```
+
+* step2
+``` bash
+# make
+```
+
+* step3
+``` bash
+# make install
+```
+
+* step4
+``` bash
+# make rootfs
+```
+
 # ARM9 Family BSP
 ---
 **NUC970 Link**
