@@ -1,20 +1,20 @@
 # How to compile the source first time?
-* step1
+* Get the nuvoton sdk code
 ``` bash
 # make prepare
 ```
 
-* step2
+* Compile the source code
 ``` bash
 # make
 ```
 
-* step3
+* Install the target, libs, etc to the rootfs dir
 ``` bash
 # make install
 ```
 
-* step4
+* Pack the rootfs image
 ``` bash
 # make rootfs
 ```
