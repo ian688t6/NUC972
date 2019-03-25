@@ -10,6 +10,8 @@ dirs += opensrc
 prepare:
 	@cd boot;git clone https://gitee.com/OpenNuvoton/NUC970_U-Boot_v2016.11 u-boot-201611;cd -;
 	@cd os;git clone https://gitee.com/OpenNuvoton/NUC970_Linux_Kernel linux-3.10.y;cd -;
+	@mkdir build
+	@mkdir -p out/bin
 
 all: $(foreach dir,$(dirs),make_all_$(dir))
 
