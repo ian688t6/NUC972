@@ -5,13 +5,17 @@ dirs += tools
 dirs += boot
 dirs += os
 dirs += opensrc
+dirs += apps
 
 .PHONY: all distclean cleanall install build clean prepare rootfs
 
 all: $(foreach dir,$(dirs),make_all_$(dir))
 
 prepare:
+	@rm -rf $(BUILDDIR)
 	@mkdir build > /dev/null
+	@mkdir -p build/lib > /dev/null
+	@mkdir -p build/bin > /dev/null
 	@mkdir -p out/bin > /dev/null
 	@mkdir -p out/hosttool > /dev/null
 	@cd build;git clone https://gitee.com/OpenNuvoton/NUC970_U-Boot_v2016.11 u-boot-201611;cd -;
