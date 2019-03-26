@@ -59,6 +59,16 @@
 # make clean mod=boot
 ```
 
+# How to compile the applications?
+* Build the apps
+``` bash
+# make build mod=apps
+```
+* Clean the apps
+``` bash
+# make clean mod=apps
+```
+
 # ARM9 Family BSP
 ---
 **NUC970 Link**
