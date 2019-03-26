@@ -19,6 +19,11 @@
 # make rootfs
 ```
 
+# How to compile the tools specifically?
+``` bash
+# make build mod=tools
+```
+
 # How to compile the kernel source specifically?
 ``` bash
 # make build mod=os
