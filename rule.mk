@@ -52,8 +52,8 @@ ifneq ($(clean-cmd), )
 	$(clean-cmd)
 endif
 	@echo "rm $(TARGET) $(LOCAL_OBJ)"
-	@rm $(LOCAL_OBJ)
-	@rm $(TARGET)
+	@rm -rf $(LOCAL_OBJ)
+	@rm -rf $(TARGET)
 
 install:
 	@echo "install $(TARGET)"
