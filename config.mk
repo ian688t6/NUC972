@@ -9,4 +9,5 @@ export TOOLDIR=$(TOPDIR)/tools
 export OPENSRCDIR=$(TOPDIR)/opensrc
 export CROSS_COMPILE=arm-hisiv300-linux-
 export KERN_CONFIG=nuc972_defconfig
+export BOOT_CONFIG=nuc970_defconfig
 
