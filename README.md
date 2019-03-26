@@ -19,19 +19,44 @@
 # make rootfs
 ```
 
+* Clean all the source
+``` bash
+# make cleanall
+```
+
+* Clean all the source and remove build dir
+``` bash
+# make distclean
+```
+
 # How to compile the tools specifically?
+* Build the tools
 ``` bash
 # make build mod=tools
 ```
+* Clean the tools
+``` bash
+# make clean mod=tools
+```
 
 # How to compile the kernel source specifically?
+* Build the os
 ``` bash
 # make build mod=os
 ```
+* Clean the os
+``` bash
+# make clean mod=os
+```
 
 # How to compile the boot code specifically?
+* Build the boot
 ``` bash
 # make build mod=boot
+```
+* Clean the boot
+``` bash
+# make clean mod=boot
 ```
 
 # ARM9 Family BSP
