@@ -19,6 +19,16 @@
 # make rootfs
 ```
 
+# How to compile the kernel source specifically?
+``` bash
+# make build mod=os
+```
+
+# How to compile the boot code specifically?
+``` bash
+# make build mod=boot
+```
+
 # ARM9 Family BSP
 ---
 **NUC970 Link**

@@ -5,13 +5,13 @@ dirs += boot
 dirs += os
 dirs += opensrc
 
-.PHONY: all distclean cleanall install build clean prepare
+.PHONY: all distclean cleanall install build clean prepare rootfs
 
 all: $(foreach dir,$(dirs),make_all_$(dir))
 
 prepare:
 	@mkdir build > /dev/null
-	@mkdir -p out/bin
+	@mkdir -p out/bin > /dev/null
 	@cd build;git clone https://gitee.com/OpenNuvoton/NUC970_U-Boot_v2016.11 u-boot-201611;cd -;
 	@cd build;git clone https://gitee.com/OpenNuvoton/NUC970_Linux_Kernel linux-3.10.y;cd -;
 	@tar -xf opensrc/rootfs/rootfs.tgz -C build/
@@ -27,6 +27,9 @@ install: $(foreach dir,$(dirs),make_install_$(dir))
 build: $(foreach dir,$(dirs),make_submod_all_$(dir))
 	
 clean: $(foreach dir,$(dirs),make_submod_clean_$(dir))
+
+rootfs:
+	@echo "make rootfs"
 
 define make_submod
 make_submod_$(1)_$(2) : $(2)
