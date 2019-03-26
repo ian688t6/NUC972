@@ -1,4 +1,4 @@
-# How to compile the source at the first time?
+# How to compile the source the first time?
 * Get the nuvoton sdk code
 ``` bash
 # make prepare
