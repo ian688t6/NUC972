@@ -5,6 +5,7 @@ export OUTDIR=$(TOPDIR)/out
 export BUILDDIR=$(TOPDIR)/build
 export OSDIR=$(TOPDIR)/os
 export BOOTDIR=$(TOPDIR)/boot
+export APPSDIR=$(TOPDIR)/apps
 export TOOLDIR=$(TOPDIR)/tools
 export OPENSRCDIR=$(TOPDIR)/opensrc
 
