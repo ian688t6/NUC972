@@ -37,10 +37,10 @@ clean: $(foreach dir,$(dirs),make_submod_clean_$(dir))
 rootfs:
 	@echo "make rootfs"
 	@rm -rf $(OUTDIR)/bin/rootfs*
-	@cd $(OUTDIR)/hosttool; ./mksquashfs		$(BUILDDIR)/rootfs $(OUTDIR)/bin/rootfs_squashfs.bin -b 64k -comp xz; 	cd -
-	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x40000 -o $(OUTDIR)/bin/rootfs_jffs_256k.bin; cd -
-	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x20000 -o $(OUTDIR)/bin/rootfs_jffs_128k.bin; cd -
-	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x10000 -o $(OUTDIR)/bin/rootfs_jffs_64k.bin;  cd -
+	@cd $(OUTDIR)/hosttool; ./mksquashfs		$(BUILDDIR)/rootfs $(OUTDIR)/bin/rootfs_squashfs.bin -b 64k -comp xz; 	cd - > /dev/null;
+	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x40000 -o $(OUTDIR)/bin/rootfs_jffs_256k.bin; cd - > /dev/null;
+	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x20000 -o $(OUTDIR)/bin/rootfs_jffs_128k.bin; cd - > /dev/null;
+	@cd $(OUTDIR)/hosttool; ./mkfs.jffs2 -d 	$(BUILDDIR)/rootfs -l -e 0x10000 -o $(OUTDIR)/bin/rootfs_jffs_64k.bin;  cd - > /dev/null;
 
 define make_submod
 make_submod_$(1)_$(2) : $(2)
