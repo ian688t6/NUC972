@@ -1,6 +1,7 @@
 include $(shell pwd)/config.mk
 
-mod :=
+mod ?= null
+dirs += tools
 dirs += boot
 dirs += os
 dirs += opensrc
@@ -12,6 +13,7 @@ all: $(foreach dir,$(dirs),make_all_$(dir))
 prepare:
 	@mkdir build > /dev/null
 	@mkdir -p out/bin > /dev/null
+	@mkdir -p out/hosttool > /dev/null
 	@cd build;git clone https://gitee.com/OpenNuvoton/NUC970_U-Boot_v2016.11 u-boot-201611;cd -;
 	@cd build;git clone https://gitee.com/OpenNuvoton/NUC970_Linux_Kernel linux-3.10.y;cd -;
 	@tar -xf opensrc/rootfs/rootfs.tgz -C build/

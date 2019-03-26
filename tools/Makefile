@@ -1,14 +1,5 @@
+sub_dir += host
+sub_dir += device
 
-CURDIR:=$(shell pwd)
-
-.PHONY: all clean
-
-all:
-	@echo "make $(CURDIR)"
-
-clean:
-	@echo "clean $(CURDIR)"
-
-install:
-	@echo "install $(CURDIR)"
+include $(TOPDIR)/subdir.mk
 
