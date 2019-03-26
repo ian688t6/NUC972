@@ -21,6 +21,8 @@ TARGETS        := mkfs.jffs2
 
 ###############################################################################
 all: $(addprefix $(PREFIX)/,$(TARGETS)) copy_mkfs_ubifs
+	@cp mkfs.jffs2 $(OUTDIR)/hosttool
+	@cp mkfs.ubifs $(OUTDIR)/hosttool
 
 copy_mkfs_ubifs:
 	cp -rf ./tmp/sbin/mkfs.ubifs . 
@@ -78,8 +80,7 @@ zlib_clean:
 distclean: clean
 
 install:
-	@cp mkfs.jffs2 $(OUTDIR)/hosttool
-	@cp mkfs.ubifs $(OUTDIR)/hosttool
+	@echo "install mkfs.jffs2"
 
 $(BUILD_DIR)/%/tar:
 	test -d $(@D) || mkdir -p $(@D)

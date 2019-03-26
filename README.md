@@ -29,7 +29,7 @@
 # make distclean
 ```
 
-# How to compile the tools specifically?
+# How to compile the tools?
 * Build the tools
 ``` bash
 # make build mod=tools
@@ -39,7 +39,7 @@
 # make clean mod=tools
 ```
 
-# How to compile the kernel source specifically?
+# How to compile the kernel source?
 * Build the os
 ``` bash
 # make build mod=os
@@ -49,7 +49,7 @@
 # make clean mod=os
 ```
 
-# How to compile the boot code specifically?
+# How to compile the boot code?
 * Build the boot
 ``` bash
 # make build mod=boot

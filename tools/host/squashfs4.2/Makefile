@@ -26,6 +26,7 @@ ZLIB           := zlib-1.2.7
 ################################################################################
 
 all: $(PREFIX)/mksquashfs
+	@cp mksquashfs $(OUTDIR)/hosttool
 
 $(PREFIX)/mksquashfs: $(BUILD_DIR)/bin/mksquashfs
 	@test -d $(@D) || mkdir -p $(@D)
@@ -66,7 +67,7 @@ clean:
 distclean: clean
 
 install:
-	@cp mksquashfs $(OUTDIR)/hosttool
+	@echo "install mksquashfs"
 
 $(BUILD_DIR)/%/tar:
 	@test -d $(@D) || mkdir -p $(@D)
