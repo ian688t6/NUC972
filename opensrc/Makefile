@@ -1,14 +1,4 @@
+sub_dir += busybox
 
-CURDIR:=$(shell pwd)
-
-.PHONY: all clean
-
-all:
-	@echo "make $(CURDIR)"
-
-clean:
-	@echo "clean $(CURDIR)"
-
-install:
-	@echo "install $(CURDIR)"
+include $(TOPDIR)/subdir.mk
 
