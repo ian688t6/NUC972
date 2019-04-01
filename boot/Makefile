@@ -7,6 +7,7 @@ all:
 	@echo "build $(CURDIR)"
 	@if [ -d $(BUILDDIR)/$(UBOOT_SOURCE) ]; then \
 		echo "make $(UBOOT_SOURCE)"; \
+		cp -rf patch/* $(BUILDDIR)/$(UBOOT_SOURCE)/; \
 		make -C $(BUILDDIR)/$(UBOOT_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) $(BOOT_CONFIG); \
 		cd $(BUILDDIR)/$(UBOOT_SOURCE); make -j8 ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE); cd -; \
 	fi
