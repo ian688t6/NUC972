@@ -22,5 +22,5 @@ export LD 				= ld
 export STRIP 			= strip
 export OBJDUMP 			= objdump
 export NM 				= nm
-export CROSS_COMPILE	= arm-hisiv300-linux-
+export CROSS_COMPILE	= arm-linux-
 
