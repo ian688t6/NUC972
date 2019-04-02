@@ -9,5 +9,4 @@ clean:
 
 install:
 	@echo "install toolchain"
-	@cp -rf runlib/* $(BUILDDIR)/rootfs/lib;
-
+	@tar -xf runlib.tgz --strip-components 1 -C $(BUILDDIR)/rootfs/lib

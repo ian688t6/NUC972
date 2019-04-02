@@ -5,6 +5,7 @@ dirs += tools
 dirs += boot
 dirs += os
 dirs += opensrc
+dirs += demo
 dirs += apps
 
 .PHONY: all distclean cleanall install build clean prepare rootfs
