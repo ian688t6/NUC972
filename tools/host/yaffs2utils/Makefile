@@ -74,7 +74,8 @@ unspare2: $(YAFFS2OBJS) $(LIBOBJS) $(UNSPARE2OBJS)
 
 clean:
 	rm -rf $(YAFFS2OBJS) $(LIBOBJS) \
-	       $(MKYAFFS2OBJS) $(UNYAFFS2OBJS) $(UNSPARE2OBJS)
+	       $(MKYAFFS2OBJS) $(UNYAFFS2OBJS) $(UNSPARE2OBJS) \
+	       mkyaffs2 unyaffs2 unspare2
 
 distclean: clean
 	rm -rf $(TARGET)
