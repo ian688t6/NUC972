@@ -1,3 +1,15 @@
+# How to configure toolchain?
+``` bash
+# cd tools/host/toolchain
+# sudo tar -xvf /host/toolchain/arm_linux_4.8.tar.gz -C /opt/nuvoton
+```
+
+``` bash
+edit /etc/profile add PATH toolchain 
+export PATH="/opt/hisi-linux/x86-arm/arm-hisiv300-linux/target/bin:$PATH" 
+export PATH="/opt/nuvoton/arm_linux_4.8/bin:$PATH" 
+```
+
 # How to compile the source the first time?
 * Get the nuvoton sdk code
 ``` bash
