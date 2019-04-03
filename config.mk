@@ -14,7 +14,7 @@ export BOOT_CONFIG=nuc970_defconfig
 
 export LDFLAGS :=
 export CCFLAGS := -Os -Wall -Werror
-export INCLUDES := -I$(OSDIR)/include
+export OS_INCLUDES := -I$(OSDIR)/include
 
 export CC 				= gcc
 export AR 				= ar

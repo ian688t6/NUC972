@@ -18,7 +18,7 @@ endif
 $(TARGET):$(LOCAL_OBJ)
 	@echo -e "${COLOR_BLUE}[ $(TARGET_TYPE): $(TARGET) ]${COLOR_RES}"
 ifeq ($(TARGET_TYPE),$(TARGET_BIN))
-	$(CROSS_COMPILE)$(CC) $^ -o $@ $(INCLUDES) $(LDFLAGS)
+	$(CROSS_COMPILE)$(CC) $^ -o $@ $(OS_INCLUDES) $(LDFLAGS)
 	$(CROSS_COMPILE)$(OBJDUMP) -d $@ > $@.dump
 	$(CROSS_COMPILE)$(OBJDUMP) -h $@ > $@.map
 	$(CROSS_COMPILE)$(NM) $@ | sort > $@.sym
@@ -38,13 +38,13 @@ endif
 
 %.o:%.c
 ifeq ($(TARGET_TYPE),$(TARGET_BIN))
-	$(CROSS_COMPILE)$(CC) $(CCFLAGS) $(INCLUDES) $(LOCAL_INC) -c $^ -o $@
+	$(CROSS_COMPILE)$(CC) $(CCFLAGS) $(OS_INCLUDES) $(LOCAL_INC) -c $^ -o $@
 endif
 ifeq ($(TARGET_TYPE),$(TARGET_SO))
-	$(CROSS_COMPILE)$(CC) -shared -fPIC $(CCFLAGS) $(INCLUDES) $(LOCAL_INC) $(LOCAL_LIB) -c $^ -o $@
+	$(CROSS_COMPILE)$(CC) -shared -fPIC $(CCFLAGS) $(OS_INCLUDES) $(LOCAL_INC) $(LOCAL_LIB) -c $^ -o $@
 endif
 ifeq ($(TARGET_TYPE),$(TARGET_AR))
-	$(CROSS_COMPILE)$(CC) $(CCFLAGS) $(INCLUDES) $(LOCAL_INC) $(LOCAL_LIB) -c $^ -o $@
+	$(CROSS_COMPILE)$(CC) $(CCFLAGS) $(OS_INCLUDES) $(LOCAL_INC) $(LOCAL_LIB) -c $^ -o $@
 endif
 
 clean:
