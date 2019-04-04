@@ -1,3 +1,3 @@
-sub_dir += basic
+sub_dir += libbasic
 
 include $(TOPDIR)/subdir.mk
