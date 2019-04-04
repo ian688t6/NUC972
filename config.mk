@@ -7,12 +7,13 @@ export OSDIR=$(TOPDIR)/os
 export BOOTDIR=$(TOPDIR)/boot
 export APPSDIR=$(TOPDIR)/apps
 export TOOLDIR=$(TOPDIR)/tools
+export LIBDIR=$(TOPDIR)/libs
 export OPENSRCDIR=$(TOPDIR)/opensrc
 
 export KERN_CONFIG=nuc972_defconfig
 export BOOT_CONFIG=nuc970_defconfig
 
-export LDFLAGS :=
+export OS_LDFLAGS := -L$(BUILDDIR)/lib
 export CCFLAGS := -Os -Wall -Werror
 export OS_INCLUDES := -I$(OSDIR)/include
 

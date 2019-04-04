@@ -4,6 +4,7 @@ mod ?= null
 dirs += tools
 dirs += boot
 dirs += os
+dirs += libs
 dirs += opensrc
 dirs += demo
 dirs += apps
