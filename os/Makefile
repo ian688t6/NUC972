@@ -7,14 +7,14 @@ all:
 	@if [ -d $(BUILDDIR)/$(KERNEL_SOURCE) ]; then \
 		echo "make $(KERNEL_SOURCE)"; \
 		cp -rf patch/* $(BUILDDIR)/$(KERNEL_SOURCE)/; \
-		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) $(KERN_CONFIG); \
-		cd $(BUILDDIR)/$(KERNEL_SOURCE); make -j8 ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) uImage; cd -; \
+		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE)- $(KERN_CONFIG); \
+		cd $(BUILDDIR)/$(KERNEL_SOURCE); make -j8 ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE)- uImage; cd -; \
 	fi
 
 clean:
 	@echo "clean $(CURDIR)"
 	@if [ -d $(BUILDDIR)/$(KERNEL_SOURCE) ]; then \
-		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) clean; \
+		make -C $(BUILDDIR)/$(KERNEL_SOURCE) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE)- clean; \
 	fi
 
 install:
