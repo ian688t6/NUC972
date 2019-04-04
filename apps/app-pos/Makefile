@@ -1,7 +1,7 @@
 TARGET_TYPE := bin
 TARGET := rf-pos
 
-LOCAL_INC += -I$(LIBDIR)/basic 
+LOCAL_INC += -I$(LIBDIR)/libbasic 
 LOCAL_SRC += main.c
 LOCAL_LIB += -lbasic
 LOCAL_LIB += -lpthread
