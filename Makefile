@@ -8,6 +8,7 @@ dirs += libs
 dirs += opensrc
 dirs += demo
 dirs += apps
+dirs += scripts
 
 .PHONY: all distclean cleanall install build clean prepare rootfs
 

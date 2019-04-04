@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mount -t tmpfs -o size=4m none /tmp
+mount -t tmpfs -o size=4m none /var
+mkdir -p /var/run
+mkdir -p /var/lock
+cp -a /etc /tmp
+mount --bind /tmp/etc /etc
+mount -t jffs2 /dev/mtdblock2 /config
+
+CONFIG_DIR=/config
+if [ "`ls -A $CONFIG_DIR`" = "" ]; then
+	echo "$CONFIG_DIR is indeed empty"
+else
+	echo "$CONFIG_DIR is not empty"
+fi

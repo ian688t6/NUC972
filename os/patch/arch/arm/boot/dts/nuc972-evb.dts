@@ -179,19 +179,18 @@
 
 			partition@0x0 {
 				label = "kernel";
-				reg = <0x00000000 0x0700000>;
+				reg = <0x00000000 0x0400000>;
 			};
 
-			partition@0x700000 {
+			partition@0x400000 {
 				label = "rootfs";
-				reg = <0x0700000 0x7900000>;
+				reg = <0x0400000 0x1400000>;
 			};
 
-/*			partition@0x1600000 {
+			partition@0x1800000 {
 				label = "user";
-				reg = <0x1600000 0x6480000>;
+				reg = <0x1800000 0x6800000>;
 			};
-			*/
 		};
 
 		sdh@b000c000 {

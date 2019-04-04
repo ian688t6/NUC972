@@ -126,7 +126,7 @@
 #define CONFIG_SYS_NAND_ONFI_DETECTION 1
 
 #define MTDIDS_DEFAULT "nand0=nand0"
-#define MTDPARTS_DEFAULT "mtdparts=nand0:0x700000@0x0(kenrel),-(rootfs)"
+#define MTDPARTS_DEFAULT "mtdparts=nand0:0x400000@0x0(kenrel),-(rootfs)"
 #define MTD_ACTIVE_PART "nand0,2"
 
 /* #define CONFIG_CMD_NAND_YAFFS2 1 */
@@ -241,14 +241,13 @@
 #define CONFIG_SYS_MALLOC_LEN	(1024*1024) /*ROUND(3 * CONFIG_ENV_SIZE + 128*1024, 0x1000)  */
 
 #define CONFIG_STACKSIZE	(32*1024)	/* regular stack */
-#if 0
-		"stderr=serial\0"\
-		"stdin=serial\0"\
-		"stdout=serial\0"
-#endif
+
 #define CONFIG_EXTRA_ENV_SETTINGS \
 		"watchdog=off\0"\
+		"stdin=serial\0"\
+		"stdout=serial\0"\
+		"stderr=serial\0"\
         "bootcmd=nboot 0x7fc0 0 0; bootm 0x7fc0\0" \
-        "bootargs=noinitrd root=/dev/mtdblock1 console=ttyS0,115200n8 rdinit=/sbin/init rootfstype=squashfs  mem=64M mtdparts=nand0:0x700000@0x0(kernel),-(rootfs)\0"\
+        "bootargs=noinitrd root=/dev/mtdblock1 console=ttyS0,115200n8 rdinit=/sbin/init rootfstype=squashfs  mem=64M mtdparts=nand0:0x400000@0x0(kernel),0x1400000@0x400000(rootfs),-(user)\0"\
 
 #endif
