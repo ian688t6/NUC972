@@ -3,7 +3,6 @@ TARGET := lvgl_demo
 
 LOCAL_INC := -I$(OPENSRCDIR)/littlevgl 
 LOCAL_SRC += main.c
-LOCAL_LIB := -llvgldrv
 LOCAL_LIB += -llvgl
 
 CCFLAGS += -DUSE_FBDEV

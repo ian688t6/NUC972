@@ -43,8 +43,8 @@
  *===================*/
 
 /* Horizontal and vertical resolution of the library.*/
-#define LV_HOR_RES          (480)
-#define LV_VER_RES          (320)
+#define LV_HOR_RES          (800)
+#define LV_VER_RES          (480)
 
 /* Dot Per Inch: used to initialize default sizes. E.g. a button with width = LV_DPI / 2 -> half inch wide
  * (Not so important, you can adjust it to modify default sizes and spaces)*/
@@ -83,7 +83,7 @@
 
 /* Use two Virtual Display buffers (VDB) to parallelize rendering and flushing
  * The flushing should use DMA to write the frame buffer in the background */
-#define LV_VDB_DOUBLE       0
+#define LV_VDB_DOUBLE       1
 
 /* Place VDB2 to a specific address (e.g. in external RAM)
  * 0: allocate automatically into RAM
